@@ -1,0 +1,10 @@
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\bin\Debug\TCP.exe.config
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\bin\Debug\TCP.exe
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\bin\Debug\TCP.pdb
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.csprojAssemblyReference.cache
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.Form1.resources
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.Properties.Resources.resources
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.csproj.GenerateResource.cache
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.csproj.CoreCompileInputs.cache
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.exe
+C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.pdb
