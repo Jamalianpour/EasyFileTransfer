@@ -21,22 +21,19 @@ namespace TCP
         }
 
         public static int port;
+        TCPServer obj_server = new TCPServer();
 
         private void bt_start_server_Click(object sender, EventArgs e)
         {
             port = Convert.ToInt32(textBox1.Text);
-            TCPServer obj_server = new TCPServer();
+            
             System.Threading.Thread obj_thread = new System.Threading.Thread(obj_server.Startserver);
             obj_thread.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
+            obj_server.StopServer();
             Application.Exit();
         }
 
@@ -61,6 +58,11 @@ namespace TCP
                 System.Threading.Thread obj_thread = new System.Threading.Thread(obj_hadler.ProcessSocketRequest);
                 obj_thread.Start();
             }
+        }
+
+        public void StopServer()
+        {
+            obj_server.Stop();
         }
 
         class SocketHandler
@@ -161,8 +163,6 @@ namespace TCP
                 return ms.ToArray();
             }
         }
-        
-        
     }
 
 }

@@ -35,38 +35,41 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pb_Upload = new System.Windows.Forms.ProgressBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bt_Sned
             // 
-            this.bt_Sned.Location = new System.Drawing.Point(201, 85);
+            this.bt_Sned.Location = new System.Drawing.Point(111, 118);
             this.bt_Sned.Name = "bt_Sned";
             this.bt_Sned.Size = new System.Drawing.Size(112, 38);
             this.bt_Sned.TabIndex = 0;
-            this.bt_Sned.Text = "send";
+            this.bt_Sned.Text = "send file";
             this.bt_Sned.UseVisualStyleBackColor = true;
             this.bt_Sned.Click += new System.EventHandler(this.bt_Sned_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(61, 79);
+            this.textBox1.Location = new System.Drawing.Point(78, 28);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 22);
+            this.textBox1.Size = new System.Drawing.Size(227, 22);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "127.0.0.1";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 82);
+            this.label1.Location = new System.Drawing.Point(6, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 17);
+            this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "ip :";
+            this.label1.Text = "Server ip :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 110);
+            this.label2.Location = new System.Drawing.Point(169, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 5;
@@ -74,15 +77,15 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(89, 107);
+            this.textBox2.Location = new System.Drawing.Point(217, 62);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(77, 22);
+            this.textBox2.Size = new System.Drawing.Size(88, 22);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "1300";
             // 
             // pb_Upload
             // 
-            this.pb_Upload.Location = new System.Drawing.Point(9, 25);
+            this.pb_Upload.Location = new System.Drawing.Point(7, 162);
             this.pb_Upload.Name = "pb_Upload";
             this.pb_Upload.Size = new System.Drawing.Size(320, 26);
             this.pb_Upload.TabIndex = 6;
@@ -91,21 +94,32 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(320, 100);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 147);
-            this.Controls.Add(this.pb_Upload);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(339, 195);
             this.Controls.Add(this.bt_Sned);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pb_Upload);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TCP Client";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -118,6 +132,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ProgressBar pb_Upload;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
