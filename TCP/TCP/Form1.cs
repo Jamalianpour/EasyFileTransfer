@@ -26,7 +26,7 @@ namespace TCP
         private void bt_start_server_Click(object sender, EventArgs e)
         {
             port = Convert.ToInt32(textBox1.Text);
-            
+            TCPServer.saveTo = textBox2.Text;
             System.Threading.Thread obj_thread = new System.Threading.Thread(obj_server.Startserver);
             obj_thread.Start();
         }
@@ -41,7 +41,7 @@ namespace TCP
 
     class TCPServer
     {
-        public static string data;
+        public static string data, saveTo;
         TcpListener obj_server;
         public TCPServer()
         {
@@ -89,7 +89,7 @@ namespace TCP
                         {
                             case 125:
                                 {
-                                    fs = new FileStream(@"D:\c#\TCP_test\" + Encoding.UTF8.GetString(recv_data), FileMode.CreateNew);
+                                    fs = new FileStream(@"" + saveTo + Encoding.UTF8.GetString(recv_data), FileMode.CreateNew);
                                     byte[] data_to_send = CreateDataPacket(Encoding.UTF8.GetBytes("126"), Encoding.UTF8.GetBytes(Convert.ToString(current_file_pointer)));
                                     ns.Write(data_to_send, 0, data_to_send.Length);
                                     ns.Flush();
