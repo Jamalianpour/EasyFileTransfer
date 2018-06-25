@@ -8,3 +8,23 @@ C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.cs
 C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.csproj.CoreCompileInputs.cache
 C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.exe
 C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP\TCP\obj\Debug\TCP.pdb
+D:\C#\TCP chat\TCP\TCP\bin\Debug\TCP.exe.config
+D:\C#\TCP chat\TCP\TCP\bin\Debug\TCP.exe
+D:\C#\TCP chat\TCP\TCP\obj\Debug\TCP.csprojAssemblyReference.cache
+D:\C#\TCP chat\TCP\TCP\obj\Debug\TCP.Form1.resources
+D:\C#\TCP chat\TCP\TCP\obj\Debug\TCP.Properties.Resources.resources
+D:\C#\TCP chat\TCP\TCP\obj\Debug\TCP.csproj.GenerateResource.cache
+D:\C#\TCP chat\TCP\TCP\obj\Debug\TCP.csproj.CoreCompileInputs.cache
+D:\C#\TCP chat\TCP\TCP\obj\Debug\TCP.exe
+D:\C#\TCP chat\TCP\TCP\obj\Debug\TCP.pdb
+D:\C#\TCP chat\TCP\TCP\bin\Debug\TCP.pdb
+D:\C#\TCP File\TCP\TCP\bin\Debug\TCP.exe.config
+D:\C#\TCP File\TCP\TCP\bin\Debug\TCP.exe
+D:\C#\TCP File\TCP\TCP\bin\Debug\TCP.pdb
+D:\C#\TCP File\TCP\TCP\obj\Debug\TCP.csprojAssemblyReference.cache
+D:\C#\TCP File\TCP\TCP\obj\Debug\TCP.Form1.resources
+D:\C#\TCP File\TCP\TCP\obj\Debug\TCP.Properties.Resources.resources
+D:\C#\TCP File\TCP\TCP\obj\Debug\TCP.csproj.GenerateResource.cache
+D:\C#\TCP File\TCP\TCP\obj\Debug\TCP.csproj.CoreCompileInputs.cache
+D:\C#\TCP File\TCP\TCP\obj\Debug\TCP.exe
+D:\C#\TCP File\TCP\TCP\obj\Debug\TCP.pdb

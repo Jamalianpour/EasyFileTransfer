@@ -18,34 +18,52 @@ namespace TCP
         public Form1()
         {
             InitializeComponent();
+            label3.Text = GetLocalIPAddress();
         }
-
-        public static int port;
-        TCPServer obj_server = new TCPServer();
 
         private void bt_start_server_Click(object sender, EventArgs e)
         {
-            port = Convert.ToInt32(textBox1.Text);
-            TCPServer.saveTo = textBox2.Text;
+            TCPServer.SaveTo = saveTo.Text;
+            TCPServer.Port = Convert.ToInt32(Port.Text);
+            TCPServer obj_server = new TCPServer();
             System.Threading.Thread obj_thread = new System.Threading.Thread(obj_server.Startserver);
             obj_thread.Start();
+            status.ForeColor = Color.Green;
+            status.Text = "روشن";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            obj_server.StopServer();
-            Application.Exit();
+
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("No network adapters with an IPv4 address in the system!");
+        }
     }
 
     class TCPServer
     {
-        public static string data, saveTo;
+        public static string data, SaveTo;
+        public static int Port;
         TcpListener obj_server;
         public TCPServer()
         {
-            obj_server = new TcpListener(IPAddress.Any, Form1.port);
+            obj_server = new TcpListener(IPAddress.Any, Port);
         }
 
         public void Startserver()
@@ -58,11 +76,6 @@ namespace TCP
                 System.Threading.Thread obj_thread = new System.Threading.Thread(obj_hadler.ProcessSocketRequest);
                 obj_thread.Start();
             }
-        }
-
-        public void StopServer()
-        {
-            obj_server.Stop();
         }
 
         class SocketHandler
@@ -89,7 +102,7 @@ namespace TCP
                         {
                             case 125:
                                 {
-                                    fs = new FileStream(@"" + saveTo + Encoding.UTF8.GetString(recv_data), FileMode.CreateNew);
+                                    fs = new FileStream(@"" + SaveTo + Encoding.UTF8.GetString(recv_data), FileMode.CreateNew);
                                     byte[] data_to_send = CreateDataPacket(Encoding.UTF8.GetBytes("126"), Encoding.UTF8.GetBytes(Convert.ToString(current_file_pointer)));
                                     ns.Write(data_to_send, 0, data_to_send.Length);
                                     ns.Flush();
@@ -115,7 +128,7 @@ namespace TCP
                                 break;
                         }
                     }
-                    if(loop_break == true)
+                    if (loop_break == true)
                     {
                         ns.Close();
                         break;

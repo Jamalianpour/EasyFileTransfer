@@ -8,3 +8,23 @@ C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP Client\TCP Client\ob
 C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP Client\TCP Client\obj\Debug\TCP Client.csproj.CoreCompileInputs.cache
 C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP Client\TCP Client\obj\Debug\TCP Client.exe
 C:\Users\Mohammad\Documents\Visual Studio 2015\Projects\TCP Client\TCP Client\obj\Debug\TCP Client.pdb
+D:\C#\TCP chat\TCP Client\TCP Client\bin\Debug\TCP Client.exe.config
+D:\C#\TCP chat\TCP Client\TCP Client\bin\Debug\TCP Client.exe
+D:\C#\TCP chat\TCP Client\TCP Client\bin\Debug\TCP Client.pdb
+D:\C#\TCP chat\TCP Client\TCP Client\obj\Debug\TCP Client.csprojAssemblyReference.cache
+D:\C#\TCP chat\TCP Client\TCP Client\obj\Debug\TCP_Client.Form1.resources
+D:\C#\TCP chat\TCP Client\TCP Client\obj\Debug\TCP_Client.Properties.Resources.resources
+D:\C#\TCP chat\TCP Client\TCP Client\obj\Debug\TCP Client.csproj.GenerateResource.cache
+D:\C#\TCP chat\TCP Client\TCP Client\obj\Debug\TCP Client.csproj.CoreCompileInputs.cache
+D:\C#\TCP chat\TCP Client\TCP Client\obj\Debug\TCP Client.exe
+D:\C#\TCP chat\TCP Client\TCP Client\obj\Debug\TCP Client.pdb
+D:\C#\TCP File\TCP Client\TCP Client\bin\Debug\TCP Client.exe.config
+D:\C#\TCP File\TCP Client\TCP Client\bin\Debug\TCP Client.exe
+D:\C#\TCP File\TCP Client\TCP Client\bin\Debug\TCP Client.pdb
+D:\C#\TCP File\TCP Client\TCP Client\obj\Debug\TCP Client.csprojAssemblyReference.cache
+D:\C#\TCP File\TCP Client\TCP Client\obj\Debug\TCP_Client.Form1.resources
+D:\C#\TCP File\TCP Client\TCP Client\obj\Debug\TCP_Client.Properties.Resources.resources
+D:\C#\TCP File\TCP Client\TCP Client\obj\Debug\TCP Client.csproj.GenerateResource.cache
+D:\C#\TCP File\TCP Client\TCP Client\obj\Debug\TCP Client.csproj.CoreCompileInputs.cache
+D:\C#\TCP File\TCP Client\TCP Client\obj\Debug\TCP Client.exe
+D:\C#\TCP File\TCP Client\TCP Client\obj\Debug\TCP Client.pdb

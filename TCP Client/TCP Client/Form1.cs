@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,13 +27,13 @@ namespace TCP_Client
                 string Selected_file = openFileDialog1.FileName;
                 string File_name = Path.GetFileName(Selected_file);
                 FileStream fs = new FileStream(Selected_file, FileMode.Open);
-                TcpClient tc = new TcpClient(textBox1.Text, Convert.ToInt32(textBox2.Text));
+                TcpClient tc = new TcpClient(comboBox1.Text, Convert.ToInt32(Port.Text));
                 NetworkStream ns = tc.GetStream();
                 byte[] data_tosend = CreateDataPacket(Encoding.UTF8.GetBytes("125"), Encoding.UTF8.GetBytes(File_name));
                 ns.Write(data_tosend, 0, data_tosend.Length);
                 ns.Flush();
                 Boolean loop_break = false;
-                while(true)
+                while (true)
                 {
                     if (ns.ReadByte() == 2)
                     {
@@ -53,6 +54,11 @@ namespace TCP_Client
                                     ns.Write(data_to_send, 0, data_to_send.Length);
                                     ns.Flush();
                                     pb_Upload.Value = (int)Math.Ceiling((double)recv_file_pointer / (double)fs.Length * 100);
+                                    if (pb_Upload.Value == 100)
+                                    {
+                                        pb_Upload.Value = 0;
+                                        
+                                    }
                                 }
                                 else
                                 {
@@ -61,19 +67,36 @@ namespace TCP_Client
                                     ns.Flush();
                                     fs.Close();
                                     loop_break = true;
+                                    MessageBox.Show("انتقال با موفقیت به پایان رسید", "اتمام", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 break;
                             default:
                                 break;
                         }
                     }
-                    if(loop_break == true)
+                    if (loop_break == true)
                     {
                         ns.Close();
                         break;
                     }
+                    
                 }
             }
+        }
+
+        public static string GetIpAddress()  
+        {
+            string ip = "";
+            IPHostEntry ipEntry = Dns.GetHostEntry(GetCompCode());
+            IPAddress[] addr = ipEntry.AddressList;
+            ip = addr[2].ToString();
+            return ip;
+        }
+        public static string GetCompCode()  // Get Computer Name
+        {
+            string strHostName = "";
+            strHostName = Dns.GetHostName();
+            return strHostName;
         }
 
         public byte[] ReadStream(NetworkStream ns)
@@ -114,6 +137,14 @@ namespace TCP_Client
             ms.Write(data, 0, data.Length);
 
             return ms.ToArray();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            for(int i = 1; i <= 100; i++)
+            {
+                comboBox1.Items.Add("192.168.1." + i);
+            }
         }
     }
 }
