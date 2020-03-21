@@ -4,6 +4,7 @@ An easy way to transfer file with **any size** on network with tcp protocol.
 ##usage
 
 1. install nuget package:
+![Nuget](https://img.shields.io/nuget/v/EasyFileTransfer)
 ```nuget
 	Install-Package EasyFileTransfer -Version 0.1.5
 ```
