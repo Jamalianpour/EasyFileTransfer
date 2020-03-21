@@ -1,0 +1,12 @@
+D:\C#\EasyFileTransfer\Sample.Server\bin\Debug\Sample.Server.exe.config
+D:\C#\EasyFileTransfer\Sample.Server\bin\Debug\Sample.Server.exe
+D:\C#\EasyFileTransfer\Sample.Server\bin\Debug\Sample.Server.pdb
+D:\C#\EasyFileTransfer\Sample.Server\obj\Debug\Sample.Server.csprojAssemblyReference.cache
+D:\C#\EasyFileTransfer\Sample.Server\obj\Debug\Sample.Server.Properties.Resources.resources
+D:\C#\EasyFileTransfer\Sample.Server\obj\Debug\Sample.Server.csproj.GenerateResource.cache
+D:\C#\EasyFileTransfer\Sample.Server\obj\Debug\Sample.Server.exe
+D:\C#\EasyFileTransfer\Sample.Server\obj\Debug\Sample.Server.pdb
+D:\C#\EasyFileTransfer\Sample.Server\bin\Debug\EasyFileTransfer.dll
+D:\C#\EasyFileTransfer\Sample.Server\bin\Debug\EasyFileTransfer.pdb
+D:\C#\EasyFileTransfer\Sample.Server\obj\Debug\Sample.Server.Form1.resources
+D:\C#\EasyFileTransfer\Sample.Server\obj\Debug\Sample.Server.csproj.CopyComplete

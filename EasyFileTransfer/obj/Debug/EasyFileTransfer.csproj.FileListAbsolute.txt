@@ -1,0 +1,6 @@
+D:\C#\EasyFileTransfer\EasyFileTransfer\bin\Debug\EasyFileTransfer.dll
+D:\C#\EasyFileTransfer\EasyFileTransfer\bin\Debug\EasyFileTransfer.pdb
+D:\C#\EasyFileTransfer\EasyFileTransfer\obj\Debug\EasyFileTransfer.csprojAssemblyReference.cache
+D:\C#\EasyFileTransfer\EasyFileTransfer\obj\Debug\EasyFileTransfer.dll
+D:\C#\EasyFileTransfer\EasyFileTransfer\obj\Debug\EasyFileTransfer.pdb
+D:\C#\EasyFileTransfer\EasyFileTransfer\obj\Debug\EasyFileTransfer.csproj.CopyComplete

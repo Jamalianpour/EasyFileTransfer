@@ -1,5 +1,10 @@
-# transfer_large_file_socket_programming
+# Easy File Transfer
+An easy way to transfer file with any size, on tcp protocol
 
-#transfer large file with c# socket programming
-1.TCP Server
-2.TCP Client
+## Screenshots
+
+| Server  | Client |
+| ------------- | ------------- |
+| <img align = "center" src="Screenshots/Server.png" width=32%>  | <img align = "center" src="Screenshots/Client.png" width=32%>  |
+
+

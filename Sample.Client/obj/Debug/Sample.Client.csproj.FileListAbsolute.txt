@@ -1,0 +1,11 @@
+D:\C#\EasyFileTransfer\Sample.Client\bin\Debug\Sample.Client.exe.config
+D:\C#\EasyFileTransfer\Sample.Client\bin\Debug\Sample.Client.exe
+D:\C#\EasyFileTransfer\Sample.Client\bin\Debug\Sample.Client.pdb
+D:\C#\EasyFileTransfer\Sample.Client\bin\Debug\EasyFileTransfer.dll
+D:\C#\EasyFileTransfer\Sample.Client\bin\Debug\EasyFileTransfer.pdb
+D:\C#\EasyFileTransfer\Sample.Client\obj\Debug\Sample.Client.Form1.resources
+D:\C#\EasyFileTransfer\Sample.Client\obj\Debug\Sample.Client.Properties.Resources.resources
+D:\C#\EasyFileTransfer\Sample.Client\obj\Debug\Sample.Client.csproj.GenerateResource.cache
+D:\C#\EasyFileTransfer\Sample.Client\obj\Debug\Sample.Client.csproj.CopyComplete
+D:\C#\EasyFileTransfer\Sample.Client\obj\Debug\Sample.Client.exe
+D:\C#\EasyFileTransfer\Sample.Client\obj\Debug\Sample.Client.pdb

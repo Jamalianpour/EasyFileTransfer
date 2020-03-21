@@ -1,0 +1,5 @@
+D:\C#\EasyFileTransfer\EasyFileTransfer\bin\Release\EasyFileTransfer.dll
+D:\C#\EasyFileTransfer\EasyFileTransfer\bin\Release\EasyFileTransfer.pdb
+D:\C#\EasyFileTransfer\EasyFileTransfer\obj\Release\EasyFileTransfer.dll
+D:\C#\EasyFileTransfer\EasyFileTransfer\obj\Release\EasyFileTransfer.pdb
+D:\C#\EasyFileTransfer\EasyFileTransfer\obj\Release\EasyFileTransfer.csprojAssemblyReference.cache
