@@ -14,6 +14,14 @@ namespace EasyFileTransfer
         public string SaveTo;
         public int Port;
         TcpListener obj_server;
+
+        public EftServer(IPAddress IP, string SaveTo, int Port)
+        {
+            this.SaveTo = SaveTo;
+            this.Port = Port;
+            obj_server = new TcpListener(IP, Port)
+        }
+
         public EftServer(string SaveTo, int Port)
         {
             this.SaveTo = SaveTo;
