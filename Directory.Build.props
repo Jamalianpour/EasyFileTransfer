@@ -1,0 +1,25 @@
+<Project>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>true</Deterministic>
+    <NeutralLanguage>en</NeutralLanguage>
+  </PropertyGroup>
+
+  <!-- Shared package / assembly identity -->
+  <PropertyGroup>
+    <Authors>Mohammad Jamalianpour</Authors>
+    <Company>Mohammad Jamalianpour</Company>
+    <Copyright>Copyright (c) 2020 Mohammad Jamalianpour</Copyright>
+    <RepositoryUrl>https://github.com/Jamalianpour/EasyFileTransfer</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <!-- Source Link: ships with the SDK, no PackageReference needed -->
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild Condition=" '$(GITHUB_ACTIONS)' == 'true' ">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+</Project>

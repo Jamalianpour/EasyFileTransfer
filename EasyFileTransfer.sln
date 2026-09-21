@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFileTransfer", "EasyFileTransfer\EasyFileTransfer.csproj", "{095B5958-8DA4-4098-A485-935D7271431D}"
+Project("{9A19103F-16F7-32B4-A1A3-6F0E9A9B9E9E}") = "EasyFileTransfer", "EasyFileTransfer\EasyFileTransfer.csproj", "{095B5958-8DA4-4098-A485-935D7271431D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Server", "Sample.Server\Sample.Server.csproj", "{B1F70903-1BA5-4D9A-B0BC-BC66A3F1ED91}"
+Project("{9A19103F-16F7-32B4-A1A3-6F0E9A9B9E9E}") = "Sample.Server", "Sample.Server\Sample.Server.csproj", "{B1F70903-1BA5-4D9A-B0BC-BC66A3F1ED91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Client", "Sample.Client\Sample.Client.csproj", "{2638D1E6-BBBC-496E-B3B8-022B0F57A242}"
+Project("{9A19103F-16F7-32B4-A1A3-6F0E9A9B9E9E}") = "Sample.Client", "Sample.Client\Sample.Client.csproj", "{2638D1E6-BBBC-496E-B3B8-022B0F57A242}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
