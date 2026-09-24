@@ -44,7 +44,7 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: dotnet pack EasyFileTransfer/EasyFileTransfer.csproj --configuration Release --no-build --output artifacts
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: matrix.os == 'ubuntu-latest'
         with:
           name: nuget
