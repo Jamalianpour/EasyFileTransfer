@@ -1,12 +1,5 @@
-﻿using EasyFileTransfer;
+using EasyFileTransfer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sample.Client
@@ -18,15 +11,42 @@ namespace Sample.Client
             InitializeComponent();
         }
 
-        private void SnedButton_Click(object sender, EventArgs e)
+        private async void SnedButton_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (openFileDialog1.ShowDialog() != DialogResult.OK)
             {
-                EasyFileTransfer.Model.Response rsp = EftClient.Send(openFileDialog1.FileName, textBox2.Text, Convert.ToInt32(textBox1.Text));
-                if (rsp.status == 1)
+                return;
+            }
+
+            if (!int.TryParse(textBox1.Text, out int port))
+            {
+                MessageBox.Show("Port must be a number.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            SnedButton.Enabled = false;
+            statusLabel.Text = "sending...";
+            try
+            {
+                var client = new EftClient(textBox2.Text.Trim(), port, new EftClientOptions
                 {
-                    MessageBox.Show("send successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    AccessToken = string.IsNullOrEmpty(tokenBox.Text) ? null : tokenBox.Text,
+                });
+
+                // Progress<T> raises its callback on the UI thread.
+                var progress = new Progress<EftProgress>(p => progressBar1.Value = (int)p.Percentage);
+                await client.SendFileAsync(openFileDialog1.FileName, progress);
+
+                statusLabel.Text = "send successfully.";
+            }
+            catch (Exception ex)
+            {
+                statusLabel.Text = "failed.";
+                MessageBox.Show(ex.Message, "Send failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                SnedButton.Enabled = true;
             }
         }
     }

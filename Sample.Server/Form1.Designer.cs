@@ -40,6 +40,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.status = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tokenBox = new System.Windows.Forms.TextBox();
+            this.lastFile = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +59,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 135);
+            this.label3.Location = new System.Drawing.Point(45, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 13;
@@ -70,9 +73,11 @@
             this.groupBox1.Controls.Add(this.saveTo);
             this.groupBox1.Controls.Add(this.Port);
             this.groupBox1.Controls.Add(this.StartButton);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.tokenBox);
             this.groupBox1.Location = new System.Drawing.Point(7, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 124);
+            this.groupBox1.Size = new System.Drawing.Size(345, 155);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -123,7 +128,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 133);
+            this.label5.Location = new System.Drawing.Point(4, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 14;
@@ -132,7 +137,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(285, 135);
+            this.label4.Location = new System.Drawing.Point(285, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 12;
@@ -142,28 +147,53 @@
             // 
             this.status.AutoSize = true;
             this.status.ForeColor = System.Drawing.Color.Red;
-            this.status.Location = new System.Drawing.Point(324, 135);
+            this.status.Location = new System.Drawing.Point(324, 166);
             this.status.Name = "status";
             this.status.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.status.Size = new System.Drawing.Size(21, 13);
             this.status.TabIndex = 10;
             this.status.Text = "Off";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 126);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "token :";
+            // 
+            // tokenBox
+            // 
+            this.tokenBox.Location = new System.Drawing.Point(65, 123);
+            this.tokenBox.Name = "tokenBox";
+            this.tokenBox.Size = new System.Drawing.Size(230, 20);
+            this.tokenBox.TabIndex = 8;
+            this.tokenBox.UseSystemPasswordChar = true;
+            // 
+            // lastFile
+            // 
+            this.lastFile.AutoSize = true;
+            this.lastFile.Location = new System.Drawing.Point(4, 188);
+            this.lastFile.Name = "lastFile";
+            this.lastFile.Size = new System.Drawing.Size(0, 13);
+            this.lastFile.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 154);
+            this.ClientSize = new System.Drawing.Size(361, 210);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.status);
+            this.Controls.Add(this.lastFile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Form1";
             this.Text = "Server";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.Leave += new System.EventHandler(this.Form1_Leave);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -185,6 +215,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label status;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tokenBox;
+        private System.Windows.Forms.Label lastFile;
     }
 }
 
