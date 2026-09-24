@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Restore
+        run: dotnet restore EasyFileTransfer.sln
+
+      - name: Build
+        run: dotnet build EasyFileTransfer.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test EasyFileTransfer.Tests/EasyFileTransfer.Tests.csproj --configuration Release --no-build
+
+      - name: Check for vulnerable packages
+        shell: bash
+        run: |
+          dotnet list EasyFileTransfer.sln package --vulnerable --include-transitive 2>&1 | tee vulnerable.txt
+          ! grep -q -i "has the following vulnerable packages" vulnerable.txt
+
+      - name: Pack
+        if: matrix.os == 'ubuntu-latest'
+        run: dotnet pack EasyFileTransfer/EasyFileTransfer.csproj --configuration Release --no-build --output artifacts
+
+      - uses: actions/upload-artifact@v4
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          name: nuget
+          path: artifacts/*

@@ -1,19 +1,22 @@
-﻿using System;
+using EasyFileTransfer;
+using System;
 using System.Drawing;
-using System.Windows.Forms;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using EasyFileTransfer;
-using System.IO;
+using System.Windows.Forms;
 
 namespace Sample.Server
 {
     public partial class Form1 : Form
     {
+        private EftServer server;
+
         public Form1()
         {
             InitializeComponent();
             label3.Text = GetLocalIPAddress();
+            saveTo.Text = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads");
         }
 
         public static string GetLocalIPAddress()
@@ -26,41 +29,59 @@ namespace Sample.Server
                     return ip.ToString();
                 }
             }
-            throw new Exception("No network adapters with an IPv4 address in the system!");
+
+            return "unknown";
         }
 
-        private void StartButton_Click(object sender, EventArgs e)
+        private async void StartButton_Click(object sender, EventArgs e)
         {
+            if (server != null)
+            {
+                await server.StopAsync();
+                server = null;
+                SetRunning(false);
+                return;
+            }
+
             try
             {
-                EftServer server = new EftServer(saveTo.Text, Convert.ToInt32(Port.Text));
-                System.Threading.Thread obj_thread = new System.Threading.Thread(server.StartServer);
-                obj_thread.Start();
-                status.ForeColor = Color.Green;
-                status.Text = "Online";
+                server = new EftServer(new EftServerOptions
+                {
+                    SaveDirectory = saveTo.Text,
+                    Port = Convert.ToInt32(Port.Text),
+                    AccessToken = string.IsNullOrEmpty(tokenBox.Text) ? null : tokenBox.Text,
+                });
+                server.FileReceived += (s, args) => BeginInvoke(new Action(() => lastFile.Text = "received: " + Path.GetFileName(args.FilePath)));
+                server.TransferFailed += (s, args) => BeginInvoke(new Action(() => lastFile.Text = "failed: " + args.Exception.Message));
+                server.Start();
+                SetRunning(true);
             }
             catch (Exception ex)
             {
+                server = null;
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void SetRunning(bool running)
+        {
+            status.ForeColor = running ? Color.Green : Color.Red;
+            status.Text = running ? "Online" : "Off";
+            StartButton.Text = running ? "Stop Server" : "Start Server";
+            saveTo.Enabled = Port.Enabled = tokenBox.Enabled = button1.Enabled = !running;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
-                saveTo.Text = folderBrowserDialog1.SelectedPath + @"\";
+                saveTo.Text = folderBrowserDialog1.SelectedPath;
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-        }
-
-        private void Form1_Leave(object sender, EventArgs e)
-        {
-            this.Dispose();
-            Application.Exit();
+            server?.Dispose();
         }
     }
 }

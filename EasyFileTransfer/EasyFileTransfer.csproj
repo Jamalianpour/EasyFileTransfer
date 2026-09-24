@@ -9,21 +9,12 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <!--
-      Pre-existing warnings in the 0.1.x code, kept as warnings (not errors) so the
-      guardrail is live today while Stage 2 clears them one by one:
-        CS1591 - missing XML docs on public members
-        CS8600/CS8602/CS8618 - nullability violations
-        CA2022 - inexact Stream.Read (the partial-read bug)
-      Remove each entry as Stage 2 fixes it; the list should end up empty.
-    -->
-    <WarningsNotAsErrors>CS1591;CS8600;CS8602;CS8618;CA2022</WarningsNotAsErrors>
   </PropertyGroup>
 
   <!-- NuGet package metadata (replaces the old .nuspec) -->
   <PropertyGroup>
     <PackageId>EasyFileTransfer</PackageId>
-    <Version>0.2.0-preview.1</Version>
+    <Version>0.2.0-preview.2</Version>
     <Title>EasyFileTransfer</Title>
     <Description>An easy way to transfer files of any size over a network using the TCP protocol.</Description>
     <PackageTags>tcp;sockets;file-transfer;networking;large-files</PackageTags>
@@ -31,10 +22,14 @@
     <PackageProjectUrl>https://github.com/Jamalianpour/EasyFileTransfer</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageReleaseNotes>Modernized build: SDK-style project, multi-targets netstandard2.0, net8.0 and net10.0.</PackageReleaseNotes>
+    <PackageReleaseNotes>Security rewrite: new versioned wire protocol with file-name validation (fixes path traversal), bounded reads, timeouts, connection limits, optional access-token authentication and TLS, and SHA-256 integrity checks. New async API (EftClient.SendFileAsync, EftServer.Start/StopAsync); the 0.1.x API remains as [Obsolete] wrappers. Not wire-compatible with 0.1.x.</PackageReleaseNotes>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="EasyFileTransfer.Tests" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="../README.md" Pack="true" PackagePath="/" Visible="false" />
